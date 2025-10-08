@@ -159,3 +159,25 @@ CREATE TABLE lignedecommande (
   FOREIGN KEY (idProduit) REFERENCES produit(idProduit)
 );
 ```
+##  Configuration du Fichier `pom.xml` ou DAO
+
+Assurez-vous de modifier les informations de connexion à la base **MySQL** selon votre environnement local.
+
+---
+
+##  Déploiement sur WildFly
+
+1. Ouvrir le projet dans **IntelliJ IDEA** ou **Eclipse**  
+2. Compiler avec **Maven → clean install**  
+3. Déployer le fichier `.war` sur **WildFly 37**  
+4. Accéder à l’application via :  
+    [http://localhost:8080/atelier1_mvc2/](http://localhost:8080/atelier1_mvc2/)
+
+---
+
+##  Réalisé par
+
+**ESSALHI SALMA**  
+Filière : *Logiciels et Systèmes Intelligents*  
+Sous la supervision de **Pr. ELAACHAK LOTFI**
+
