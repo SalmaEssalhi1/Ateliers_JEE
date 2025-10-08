@@ -37,6 +37,10 @@ Elle permet la gestion complète des **clients**, **produits**, **commandes** et
 ---
 
 ##  Schéma de la Base de Données
+### Diagramme de classe : 
+-> Le diagramme de classe a été conçu avec quatre entités principales :
+
+<img src="https://github.com/user-attachments/assets/ce6d0f61-8187-4663-989d-decc03e509cc" alt="Image" width="400" />
 
 ### Tables principales :
 
@@ -44,7 +48,8 @@ Elle permet la gestion complète des **clients**, **produits**, **commandes** et
 - **Produit** (`idProduit`, `nomProduit`, `prix`, `stock`)  
 - **Commande** (`idCommande`, `dateCommande`, `prixTotal`, `idClient`)  
 - **LigneDeCommande** (`idLigne`, `quantite`, `prixUnitaire`, `idCommande`, `idProduit`)
-
+  
+<img src="https://github.com/user-attachments/assets/128a14c1-589a-47d7-a574-d3f4ed5799d6" alt="Image" width="700" />
 ### Relations :
 - 1 client → plusieurs commandes  
 - 1 commande → plusieurs lignes de commande  
@@ -72,27 +77,41 @@ Elle permet la gestion complète des **clients**, **produits**, **commandes** et
 ```
 ##  Fonctionnalités Implémentées
 
+###  Interface Utilisateur
+- Design moderne (dégradé bleu/violet)  
+- Modales pour l’édition  
+- Notifications Toast (succès / erreur)  
+- AJAX / jQuery pour interactions dynamiques
+  
+  <img src="https://github.com/user-attachments/assets/78b17ae3-6cea-4df7-ba3c-3b28a32bc3fb" alt="Image" width="600" />
+
 ###  Gestion des Clients
 - Affichage, ajout, modification, suppression  
-- Formulaire dynamique et interface moderne  
+- Formulaire dynamique et interface moderne
+  
+<img src="https://github.com/user-attachments/assets/f427bd65-b726-4b77-8af2-c052e1f92979" alt="Image" width="600" />
+<img src="https://github.com/user-attachments/assets/a0964380-007f-4743-b9ab-2e47e15f35c3" alt="Image" width="600" />
 
 ###  Gestion des Produits
 - CRUD complet (ajout, modification via modale, suppression)  
 - Gestion du stock et du prix  
 
+<img src="https://github.com/user-attachments/assets/80e3de5d-c81f-476d-b056-51dd07bee51b" alt="Image" width="600" />
+<img src="https://github.com/user-attachments/assets/b6af9939-c3a2-4a5b-99e8-50b31a6c2ce8" alt="Image" width="600" />
+
 ###  Gestion des Commandes
 - Liste des commandes et détails dynamiques  
-- Création de commande avec calcul automatique du prix total  
+- Création de commande avec calcul automatique du prix total
+
+  <img src="https://github.com/user-attachments/assets/49715f8c-c186-4a83-9c02-2168ff169325" alt="Image" width="600" />
 
 ###  Gestion des Lignes de Commande
 - Ajout / suppression de produits à une commande  
 - Mise à jour automatique du stock et du total  
 
-###  Interface Utilisateur
-- Design moderne (dégradé bleu/violet)  
-- Modales pour l’édition  
-- Notifications Toast (succès / erreur)  
-- AJAX / jQuery pour interactions dynamiques  
+<img src="https://github.com/user-attachments/assets/94cd8707-f810-4e8d-884f-428d96cdb55e" alt="Image" width="600" />
+<img src="https://github.com/user-attachments/assets/941a9812-d187-46af-b0a7-9ec965def4e7" alt="Image" width="600" />
+  
 
 ---
 
