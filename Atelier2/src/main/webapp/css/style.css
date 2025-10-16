@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f4f7fa;
+  margin: 0;
+  color: #222;
+}
+.main-header {
+  background: #1e3a5c;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 8px rgba(30,58,92,0.08);
+}
+.logo {
+  font-weight: 600;
+}
+.navbar {
+  background: #2d4d7c;
+  padding: 0.5rem 2rem;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.navbar a:hover, .navbar a.active {
+  color: #4fc3f7;
+}
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(30,58,92,0.08);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.form-card h2 {
+  margin-top: 0;
+  color: #1e3a5c;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2d4d7c;
+}
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+.form-control:focus {
+  border-color: #4fc3f7;
+  outline: none;
+}
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn-add {
+  background: #1976d2;
+  color: #fff;
+}
+.btn-add:hover {
+  background: #1565c0;
+}
+.btn-cancel {
+  background: #cfd8dc;
+  color: #222;
+}
+.btn-cancel:hover {
+  background: #b0bec5;
+}
+.form-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: none;
+}
+.form-message.success {
+  background: #e3fcec;
+  color: #388e3c;
+}
+.form-message.error {
+  background: #ffebee;
+  color: #c62828;
+}
+.animate-fadein {
+  animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 800px) {
+  .container { padding: 1rem; }
+  .card { padding: 1rem; }
+}
