@@ -1,6 +1,6 @@
-# 📊 RAPPORT DÉTAILLÉ - PROJET ATELIER2
+# Application web basée sur MVC2 et JPA
 
-## 🎯 Vue d'ensemble du projet
+## Vue d'ensemble du projet
 
 **Nom du projet :** Atelier2 - Application E-commerce "SalmaStore"  
 **Type :** Application Web Java EE avec JPA  
@@ -10,7 +10,7 @@
 
 ---
 
-## 🏗️ Architecture technique
+## Architecture technique
 
 ### Stack technologique
 - **Backend :** Java 23, Jakarta EE 6.0
@@ -38,8 +38,11 @@ atelier2/
 ```
 
 ---
+##  Schéma de la Base de Données
+### Diagramme de classe : 
+<img src="https://github.com/user-attachments/assets/493c21ac-8c84-4a3d-b863-bf5aceff4e31" alt="Image" width="400" />
 
-## 🗄️ Modèle de données (Entités JPA)
+## Modèle de données (Entités JPA)
 
 ### 1. **Internaute** (Utilisateur)
 ```java
@@ -112,10 +115,10 @@ atelier2/
 - `quantite` : Quantité du produit
 - `panier` : Référence au panier (ManyToOne)
 - `produit` : Référence au produit (ManyToOne)
-
+<img src="https://github.com/user-attachments/assets/5b01f4b1-4234-44f6-a552-9fa5a5e56097" alt="Image" width="600" />
 ---
 
-## 🎮 Contrôleurs (Servlets)
+##  Contrôleurs (Servlets)
 
 ### 1. **AccueilServlet** (`/accueil`)
 **Fonctionnalités :**
@@ -170,7 +173,7 @@ atelier2/
 
 ---
 
-## 🎨 Interface utilisateur
+##  Interface utilisateur
 
 ### Design et UX
 - **Thème :** Design moderne avec palette rose/rose clair
@@ -186,17 +189,29 @@ atelier2/
 - Lien vers l'inscription
 - Messages d'erreur personnalisés
 
+  <img src="https://github.com/user-attachments/assets/427f430b-92d5-4eb9-bd36-e6cf7bdcf4a2" alt="Image" width="600" />
+
 #### 2. **Page d'accueil** (`index.jsp`)
 - Affichage des vitrines et produits
 - Recherche en temps réel
 - Boutons d'ajout au panier
 - Messages de bienvenue personnalisés
 
+  <img src="https://github.com/user-attachments/assets/5a1cfd25-9334-4f7c-9b28-55f037d8055f" alt="Image" width="600" />
+
 #### 3. **Page du panier** (`panier/list.jsp`)
 - Tableau des produits avec quantités
 - Boutons d'incrémentation/décrémentation
 - Calcul automatique du total
 - Actions de gestion du panier
+
+  <img src="https://github.com/user-attachments/assets/ffc4c957-2edc-4a16-9fc4-ac279fd0ae3f" alt="Image" width="600" />
+
+#### 4. **Page du profil** (`profile.jsp`)
+- Fonction : Affichage des informations et modification du profil utilisateur
+- Design : Cartes d'information élégantes
+- Fonctionnalités : Boutons d'action pour modification
+<img src="https://github.com/user-attachments/assets/f228016b-7699-4d20-8a39-0de8287570ce" alt="Image" width="600" />
 
 ### Composants réutilisables
 - **Header** : Navigation et informations utilisateur
@@ -205,7 +220,7 @@ atelier2/
 
 ---
 
-## 🔧 Configuration et déploiement
+##  Configuration et déploiement
 
 ### Configuration JPA (`persistence.xml`)
 ```xml
@@ -234,7 +249,7 @@ atelier2/
 
 ---
 
-## 🚀 Fonctionnalités principales
+##  Fonctionnalités principales
 
 ### 1. **Gestion des utilisateurs**
 - ✅ Inscription avec validation
@@ -265,7 +280,7 @@ atelier2/
 
 ---
 
-## 📈 Points forts du projet
+##  Points forts du projet
 
 ### Architecture
 - **Séparation des responsabilités** : MVC bien structuré
@@ -287,36 +302,7 @@ atelier2/
 
 ---
 
-## 🔍 Améliorations possibles
-
-### Sécurité
-- [ ] Validation des entrées plus robuste
-- [ ] Protection CSRF
-- [ ] Chiffrement HTTPS
-- [ ] Gestion des rôles utilisateurs
-
-### Fonctionnalités
-- [ ] Système de commandes
-- [ ] Historique des achats
-- [ ] Gestion des stocks en temps réel
-- [ ] Système de paiement
-- [ ] Notifications email
-
-### Performance
-- [ ] Mise en cache des requêtes
-- [ ] Pagination des résultats
-- [ ] Optimisation des requêtes JPA
-- [ ] Compression des ressources
-
-### Interface
-- [ ] Mode sombre
-- [ ] Internationalisation
-- [ ] Accessibilité améliorée
-- [ ] Tests automatisés
-
----
-
-## 📊 Métriques du projet
+## Métriques du projet
 
 ### Code
 - **Lignes de code :** ~2000+ lignes
@@ -337,7 +323,7 @@ atelier2/
 
 ---
 
-## 🎯 Conclusion
+##  Conclusion
 
 Le projet **Atelier2 - SalmaStore** est une application e-commerce complète et bien structurée qui démontre une maîtrise solide des technologies Java EE modernes. L'architecture MVC, l'utilisation de JPA, et l'interface utilisateur soignée en font un projet de qualité professionnelle.
 
@@ -348,10 +334,15 @@ Le projet **Atelier2 - SalmaStore** est une application e-commerce complète et 
 - Système de panier fonctionnel
 - Code bien documenté et structuré
 
-Le projet est prêt pour un déploiement en environnement de production avec quelques améliorations de sécurité et de performance.
 
----
 
-*Rapport généré le : ${new java.util.Date()}*  
+--
+##  Réalisé par
+
+**ESSALHI SALMA**  
+Filière : *Logiciels et Systèmes Intelligents*  
+Sous la supervision de **Pr. ELAACHAK LOTFI**
+
+*Rapport généré le : 16/10/2025*  
 *Projet : Atelier2 - SalmaStore*  
 *Technologies : Java EE, JPA, MySQL, JSP*
