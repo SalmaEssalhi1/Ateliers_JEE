@@ -2,7 +2,7 @@
 
 ##  Vue d'ensemble du projet
 
-**SalmaStore** est une application e-commerce moderne développée avec Java EE, utilisant JSF (Jakarta Server Faces) et PrimeFaces pour l'interface utilisateur. Le projet implémente une architecture MVC avec CDI (Contexts and Dependency Injection) et JPA pour la persistance des données.
+**SalmaStore** est une application E-commerce moderne développée avec Java EE, utilisant JSF (Jakarta Server Faces) et PrimeFaces pour l'interface utilisateur. Le projet implémente une architecture MVC avec CDI (Contexts and Dependency Injection) et JPA pour la persistance des données.
 
 ---
 
