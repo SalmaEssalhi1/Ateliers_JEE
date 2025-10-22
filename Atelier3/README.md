@@ -1,12 +1,12 @@
-# 📊 RAPPORT TECHNIQUE - PROJET SALMASTORE
+# RAPPORT TECHNIQUE - PROJET SALMASTORE
 
-## 🎯 Vue d'ensemble du projet
+##  Vue d'ensemble du projet
 
 **SalmaStore** est une application e-commerce moderne développée avec Java EE, utilisant JSF (Jakarta Server Faces) et PrimeFaces pour l'interface utilisateur. Le projet implémente une architecture MVC avec CDI (Contexts and Dependency Injection) et JPA pour la persistance des données.
 
 ---
 
-## 📋 Informations générales
+##  Informations générales
 
 | **Propriété** | **Valeur** |
 |---------------|------------|
@@ -20,7 +20,7 @@
 
 ---
 
-## 🏗️ Architecture technique
+##  Architecture technique
 
 ### Stack technologique
 
@@ -50,7 +50,7 @@
 
 ---
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 salma/
@@ -95,7 +95,7 @@ salma/
 
 ---
 
-## 🗄️ Modèle de données
+##  Modèle de données
 
 ### Entités principales
 
@@ -173,7 +173,7 @@ public enum Role {
 
 ---
 
-## 🎨 Interface utilisateur
+##  Interface utilisateur
 
 ### Design et thème
 
@@ -198,11 +198,16 @@ Le projet utilise un **thème personnalisé rose/magenta** avec les caractérist
 - Cartes produits avec images, prix et stock
 - Boutons d'ajout au panier
 - Interface adaptative
+  
+<img src="https://github.com/user-attachments/assets/abe31345-1d23-448d-b399-ca9bf797ca1a" alt="Image" width="600" />
 
 #### 2. **Authentification**
 - **Connexion** (`login.xhtml`) : Formulaire de connexion
 - **Inscription** (`register.xhtml`) : Création de compte avec choix de rôle
 - **Gestion d'erreurs** (`login-error.xhtml`) : Page d'erreur stylisée
+
+<img src="https://github.com/user-attachments/assets/f6f93fb8-c42b-4060-b68d-4addacfcd4f8" alt="Image" width="500" />
+<img src="https://github.com/user-attachments/assets/4f69a2d0-0811-4113-b5a0-ff255a061d72" alt="Image" width="345" />
 
 #### 3. **Panier** (`panier.xhtml`)
 - Affichage des articles sélectionnés
@@ -213,14 +218,16 @@ Le projet utilise un **thème personnalisé rose/magenta** avec les caractérist
 #### 4. **Administration**
 - **Gestion produits** (`admin/produits.xhtml`) : CRUD complet
 - **Gestion utilisateurs** (`admin/users.xhtml`) : Administration des comptes
+<img src="https://github.com/user-attachments/assets/7a6d7b72-d01f-404d-bac0-769ee54e60fe" alt="Image" width="600" />
 
 #### 5. **Confirmation** (`checkout.xhtml`)
 - Page de confirmation de commande
 - Informations client et commande
+<img src="https://github.com/user-attachments/assets/e281fc5f-21ed-4880-84dc-d62fdcf001a8" alt="Image" width="600" />
 
 ---
 
-## 🔧 Fonctionnalités implémentées
+##  Fonctionnalités implémentées
 
 ### Authentification et autorisation
 
@@ -229,6 +236,7 @@ Le projet utilise un **thème personnalisé rose/magenta** avec les caractérist
 - **Connexion** : Authentification par email/mot de passe
 - **Déconnexion** : Invalidation de session
 - **Rôles** : ADMIN, VENDEUR, ACHETEUR
+<img src="https://github.com/user-attachments/assets/85aa0961-405c-4eef-8202-38bea9e38ec6" alt="Image" width="600" />
 
 #### Sécurité
 - Validation des données côté client et serveur
@@ -278,7 +286,7 @@ Le projet utilise un **thème personnalisé rose/magenta** avec les caractérist
 
 ---
 
-## 🚀 Configuration et déploiement
+##  Configuration et déploiement
 
 ### Configuration Maven
 
@@ -333,7 +341,7 @@ Le projet utilise Maven avec les plugins suivants :
 
 ---
 
-## 📊 Données de test
+##  Données de test
 
 Le projet inclut des données de démonstration dans `import.sql` :
 
@@ -351,7 +359,7 @@ Le projet inclut des données de démonstration dans `import.sql` :
 
 ---
 
-## 🧪 Tests et qualité
+##  Tests et qualité
 
 ### Tests unitaires
 - Configuration JUnit 5
@@ -366,7 +374,7 @@ Le projet inclut des données de démonstration dans `import.sql` :
 
 ---
 
-## 📈 Métriques du projet
+##  Métriques du projet
 
 | **Métrique** | **Valeur** |
 |--------------|------------|
@@ -379,36 +387,7 @@ Le projet inclut des données de démonstration dans `import.sql` :
 
 ---
 
-## 🔮 Améliorations futures
-
-### Fonctionnalités suggérées
-
-#### Sécurité
-- **Chiffrement des mots de passe** : Implémentation PBKDF2 ou BCrypt
-- **HTTPS** : Sécurisation des communications
-- **Validation CSRF** : Protection contre les attaques
-
-#### Fonctionnalités e-commerce
-- **Système de commandes** : Persistance des commandes
-- **Historique des achats** : Suivi des transactions
-- **Système de paiement** : Intégration de passerelles de paiement
-- **Gestion des livraisons** : Suivi et statuts
-
-#### Interface utilisateur
-- **Recherche avancée** : Filtres par catégorie, prix, marque
-- **Wishlist** : Liste de souhaits utilisateur
-- **Avis et notes** : Système d'évaluation des produits
-- **Notifications** : Alertes email et push
-
-#### Administration
-- **Tableau de bord** : Statistiques et métriques
-- **Gestion des catégories** : Organisation des produits
-- **Rapports** : Analyses de ventes et performance
-- **Backup/Restore** : Sauvegarde des données
-
----
-
-## 📝 Conclusion
+##  Conclusion
 
 **SalmaStore** est une application e-commerce moderne et bien structurée qui démontre une maîtrise des technologies Java EE. Le projet présente :
 
@@ -429,6 +408,11 @@ Le projet constitue une base solide pour une application e-commerce professionne
 
 ---
 
+##  Réalisé par
+
+**ESSALHI SALMA**  
+Filière : *Logiciels et Systèmes Intelligents*  
+Sous la supervision de **Pr. ELAACHAK LOTFI**
 **Date du rapport** : Janvier 2025  
 **Version du projet** : 1.0-SNAPSHOT  
 **Statut** : Fonctionnel et déployable
