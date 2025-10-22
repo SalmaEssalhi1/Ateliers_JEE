@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Test Page</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+<h:body class="auth-container">
+    <div class="auth-card" style="max-width: 600px;">
+        <div class="auth-header">
+            <i class="pi pi-cog auth-icon"/>
+            <h2 class="auth-title">Test Page</h2>
+            <p class="auth-subtitle">Page de test pour les fonctionnalités</p>
+        </div>
+        
+        <h:form>
+            <p:messages/>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <p:inputText id="email" value="#{authBean.email}" styleClass="ui-inputfield"/>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Password:</label>
+                <p:inputText id="password" value="#{authBean.password}" styleClass="ui-inputfield"/>
+            </div>
+            
+            <div class="form-group">
+                <label for="role" class="form-label">Role:</label>
+                <p:inputText id="role" value="#{authBean.selectedRole}" styleClass="ui-inputfield"/>
+            </div>
+            
+            <p:commandButton value="Test Register" 
+                             action="#{authBean.register()}"
+                             update="@form"
+                             styleClass="ui-button-primary"/>
+        </h:form>
+        
+        <hr style="margin: 30px 0;"/>
+        
+        <div style="background: #f7fafc; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #d81b60;">Debug Info:</h3>
+            <p><strong>Email:</strong> #{authBean.email}</p>
+            <p><strong>Password:</strong> #{authBean.password}</p>
+            <p><strong>Role:</strong> #{authBean.selectedRole}</p>
+        </div>
+    </div>
+</h:body>
+</html>
+

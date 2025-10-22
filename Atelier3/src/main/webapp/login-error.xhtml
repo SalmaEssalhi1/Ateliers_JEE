@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+    <title>Erreur de connexion - E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/primeicons/primeicons.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+</head>
+<body class="auth-container">
+    
+    <div class="auth-card" style="max-width: 450px;">
+        <div class="auth-header">
+            <i class="pi pi-times-circle auth-icon" style="color: #e53e3e;"></i>
+            <h2 class="auth-title">Erreur de connexion</h2>
+            <p class="auth-subtitle">Email ou mot de passe incorrect</p>
+        </div>
+        
+        <div style="margin: 30px 0;">
+            <p style="color: #718096; font-size: 16px; line-height: 1.6; margin-bottom: 30px;">
+                Veuillez vérifier vos identifiants et réessayer.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <a href="login.xhtml" class="ui-button-primary" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px;">
+                    <i class="pi pi-refresh"></i>
+                    <span>Réessayer</span>
+                </a>
+                <a href="register.xhtml" class="ui-button-outlined" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; color: #2d3748; border-color: #e2e8f0;">
+                    <i class="pi pi-user-plus"></i>
+                    <span>Créer un compte</span>
+                </a>
+                <a href="index.xhtml" class="back-link" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px;">
+                    <i class="pi pi-home"></i>
+                    <span>Retour à l'accueil</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

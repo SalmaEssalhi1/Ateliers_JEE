@@ -1,0 +1,479 @@
+/* ================================
+   Global Styles - Auth Style Theme
+   ================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Auth container style for full pages */
+body.auth-container {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Auth card style for main content */
+.main-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    animation: slideIn 0.8s ease;
+}
+
+/* Auth card style for full pages */
+.auth-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    animation: slideIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ================================
+   Navigation Menu - Auth Style
+   ================================ */
+.ui-menubar {
+    background: linear-gradient(135deg, #f06292 0%, #ec407a 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 10px 20px;
+}
+
+.ui-menubar .ui-menuitem-link {
+    color: white !important;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.ui-menubar .ui-menuitem-link:hover {
+    background: rgba(255,255,255,0.2) !important;
+    transform: translateY(-2px);
+}
+
+.ui-menubar .ui-menuitem-text {
+    color: white !important;
+    font-weight: 500;
+}
+
+.ui-menubar form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ================================
+   Page Headers - Auth Style
+   ================================ */
+h1, h2, h3 {
+    color: #d81b60;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #ec407a;
+    display: inline-block;
+}
+
+/* Auth header styles */
+.auth-header {
+    margin-bottom: 20px;
+}
+
+.auth-icon {
+    font-size: 40px;
+    color: #ec407a;
+}
+
+.auth-title {
+    color: #d81b60;
+    margin: 10px 0 5px;
+}
+
+.auth-subtitle {
+    color: #7b1fa2;
+    font-size: 14px;
+}
+
+/* ================================
+   Product Cards & DataTable - Auth Style
+   ================================ */
+.produits-table {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    animation: slideIn 0.8s ease;
+}
+
+.produits-table .ui-datatable-thead > tr > th {
+    background: linear-gradient(135deg, #f06292 0%, #ec407a 100%) !important;
+    color: white !important;
+    font-weight: 600;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.produits-table .ui-datatable-data > tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.produits-table .ui-datatable-data > tr:hover {
+    background-color: #f7fafc !important;
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.produits-table .ui-datatable-data > tr > td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Product Images */
+.product-image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================================
+   Buttons - Auth Style
+   ================================ */
+.ui-button {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ui-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.ui-button-primary {
+    background-color: #f06292 !important;
+    border: none !important;
+    border-radius: 25px !important;
+    color: white !important;
+    font-weight: bold !important;
+    transition: background 0.3s ease;
+}
+
+.ui-button-primary:hover {
+    background-color: #ec407a !important;
+}
+
+.ui-button-success {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.ui-button-danger {
+    background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
+}
+
+.ui-button-warning {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+}
+
+.ui-button-info {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.ui-button-outlined {
+    background: transparent;
+    border: 2px solid currentColor;
+}
+
+.ui-button-sm {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+}
+
+/* ================================
+   Panels & Cards - Auth Style
+   ================================ */
+.ui-panel {
+    background: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.ui-panel .ui-panel-titlebar {
+    background: linear-gradient(135deg, #f06292 0%, #ec407a 100%);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-weight: 600;
+}
+
+.ui-panel .ui-panel-content {
+    padding: 20px;
+}
+
+/* ================================
+   Badges & Labels
+   ================================ */
+.ui-badge {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.ui-badge.ui-badge-success {
+    background: #48bb78;
+}
+
+.ui-badge.ui-badge-warning {
+    background: #ed8936;
+}
+
+.ui-badge.ui-badge-danger {
+    background: #f56565;
+}
+
+/* ================================
+   Messages & Growl
+   ================================ */
+.ui-messages,
+.ui-growl {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.ui-growl {
+    top: 80px !important;
+    right: 20px !important;
+}
+
+.ui-growl-item {
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* ================================
+   Footer
+   ================================ */
+footer {
+    background: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+    color: #718096;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ================================
+   Form Elements - Auth Style
+   ================================ */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    color: #ad1457;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.ui-inputfield,
+.ui-password {
+    width: 100%;
+    border: 1px solid #f48fb1;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.ui-inputfield:focus,
+.ui-password:focus {
+    border-color: #ec407a;
+    box-shadow: 0 0 6px rgba(236, 64, 122, 0.4);
+}
+
+/* ================================
+   Links - Auth Style
+   ================================ */
+.auth-link {
+    color: #ec407a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: #ad1457;
+}
+
+.back-link {
+    color: #9c27b0;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back-link:hover {
+    color: #6a1b9a;
+}
+
+/* ================================
+   Info Panels - Auth Style
+   ================================ */
+.info-panel {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+.info-panel i {
+    font-size: 3.5rem;
+    color: #ec407a;
+    margin-bottom: 20px;
+}
+
+.info-panel h3 {
+    color: #d81b60;
+    margin: 15px 0;
+}
+
+/* ================================
+   Pagination
+   ================================ */
+.ui-paginator {
+    background: white;
+    padding: 15px;
+    border-radius: 0 0 12px 12px;
+}
+
+.ui-paginator .ui-paginator-pages .ui-paginator-page {
+    border-radius: 6px;
+    margin: 0 3px;
+}
+
+.ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+    background: #ec407a !important;
+    border-color: #ec407a !important;
+}
+
+/* ================================
+   Loading Animation
+   ================================ */
+.ui-blockui {
+    background: rgba(236, 64, 122, 0.1) !important;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+@media (max-width: 992px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px 10px;
+    }
+    
+    .ui-menubar {
+        padding: 5px 10px;
+    }
+    
+    .ui-datatable {
+        font-size: 0.875rem;
+    }
+    
+    .ui-button {
+        padding: 8px 12px;
+        font-size: 0.875rem;
+    }
+    
+    .produits-table .ui-datatable-data > tr > td {
+        padding: 10px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    .info-panel {
+        padding: 25px 15px;
+    }
+    
+    .info-panel i {
+        font-size: 2.5rem;
+    }
+}
+
