@@ -151,7 +151,6 @@ L'application fournit les opérations CRUD (Create, Read, Update, Delete) pour c
 - Enregistrer une note d'évaluation
 - Modifier une note
 - Supprimer une note
-- Rechercher une note par ID
 - Lister toutes les notes
 
 ## API EJB
@@ -242,7 +241,13 @@ Les contributions sont les bienvenues ! Merci de :
 
 Ce projet est destiné à des fins éducatives.
 
-## Auteur
+##  Réalisé par
 
-Développé dans le cadre d'un projet académique à l'Université FSTT.
+**ESSALHI SALMA**  
+Filière : *Logiciels et Systèmes Intelligents*  
+Sous la supervision de **Pr. ELAACHAK LOTFI**
+**Date du rapport** : 28/10/2025  
+**Version du projet** : 1.0-SNAPSHOT  
+**Statut** : Fonctionnel et déployable
+
 
