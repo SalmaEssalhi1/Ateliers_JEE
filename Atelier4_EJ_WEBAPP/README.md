@@ -1,10 +1,10 @@
-# 🎓 Application de Gestion Étudiants
+#  Application de Gestion Étudiants
 
 Application web de gestion académique développée avec **Jakarta EE 10**, **EJB3** et **JPA/Hibernate**.
 
 ---
 
-## 📋 Table des Matières
+##  Table des Matières
 
 1. [Introduction](#introduction)
 2. [Fonctionnalités](#fonctionnalités)
@@ -49,6 +49,9 @@ Ce projet consiste à développer une application web de gestion académique per
 
 ## 2. Fonctionnalités
 
+<img src="https://github.com/user-attachments/assets/3d0c0e17-510b-43c4-9e73-493bef021a07" alt="Image" width="550" />
+
+
 ### 👥 Gestion des Étudiants
 - ✅ Créer un nouvel étudiant
 - ✅ Lister tous les étudiants
@@ -56,6 +59,8 @@ Ce projet consiste à développer une application web de gestion académique per
 - ✅ Supprimer un étudiant
 - ✅ Interface intuitive avec validation des données
 
+<img src="https://github.com/user-attachments/assets/d9e1890c-959b-44f1-a78a-541b5edc6795" alt="Image" width="550" />
+  
 ### 📚 Gestion des Modules
 - ✅ Ajouter de nouveaux modules d'enseignement
 - ✅ Consulter la liste des modules
@@ -63,12 +68,16 @@ Ce projet consiste à développer une application web de gestion académique per
 - ✅ Supprimer un module
 - ✅ Affichage du code, nom et description
 
+<img src="https://github.com/user-attachments/assets/52dfbd76-271d-4939-81c7-0d4fbb7f72d5" alt="Image" width="550" />
+
 ### 📊 Gestion des Notes (Suivie)
 - ✅ Enregistrer les notes par étudiant et par module
 - ✅ Consulter toutes les notes
 - ✅ Modifier une note existante
 - ✅ Supprimer une note
 - ✅ Affichage coloré selon la performance (excellent, bon, moyen, faible)
+
+  <img src="https://github.com/user-attachments/assets/5bfdfa11-4164-444b-8eb0-b295b5107f51" alt="Image" width="550" />
 
 ---
 
@@ -111,7 +120,7 @@ Ce projet consiste à développer une application web de gestion académique per
 
 1. **Créer une base de données MySQL :**
 ```sql
-CREATE DATABASE gestion_etudiants;
+CREATE DATABASE Getudiants;
 ```
 
 2. **Configurer le fichier `persistence.xml`** avec vos paramètres de connexion
@@ -554,17 +563,12 @@ Cette application démontre une compréhension solide des technologies Jakarta E
 
 ---
 
-## 📄 Informations du Projet
+##  Réalisé par
 
-**Date** : 2024  
-**Université** : Université Abdelmalek Essaadi - Faculté des Sciences et Techniques de Tanger  
-**Technologies** : Jakarta EE 10, EJB3, JPA, JSP, Maven  
-**Licence** : Projet académique
+**ESSALHI SALMA**  
+Filière : *Logiciels et Systèmes Intelligents*  
+Sous la supervision de **Pr. ELAACHAK LOTFI**
+**Date du rapport** : 28/10/2025  
+**Version du projet** : 1.0-SNAPSHOT  
+**Statut** : Fonctionnel et déployable
 
----
-
-## 🤝 Contribution
-
-Ce projet est développé à des fins éducatives. Toute amélioration est la bienvenue !
-
-**Développé avec ❤️ en utilisant Jakarta EE 10, EJB3 & JPA**
