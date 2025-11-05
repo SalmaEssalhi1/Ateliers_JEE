@@ -213,7 +213,14 @@ ng serve
 
 ---
 
-## Licence
-Projet éducatif / démonstration.
+
+##  Réalisé par
+
+**ESSALHI SALMA**  
+Filière : *Logiciels et Systèmes Intelligents*  
+Sous la supervision de **Pr. ELAACHAK LOTFI**
+**Date du rapport** : novembre 2025  
+**Version du projet** : 1.0-SNAPSHOT  
+**Statut** : Fonctionnel et déployable
 
 
