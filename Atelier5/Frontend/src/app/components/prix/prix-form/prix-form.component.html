@@ -1,0 +1,63 @@
+<div class="container mt-4">
+  <h2>Créer un Prix</h2>
+  
+  <form (ngSubmit)="onSubmit()" #prixForm="ngForm">
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input 
+        type="date" 
+        class="form-control" 
+        id="date" 
+        [(ngModel)]="date" 
+        name="date" 
+        required>
+    </div>
+    <div class="mb-3">
+      <label for="station" class="form-label">Station</label>
+      <select 
+        class="form-select" 
+        id="station" 
+        [(ngModel)]="selectedStationId" 
+        name="station" 
+        required>
+        <option [value]="0">Sélectionner une station</option>
+        <option *ngFor="let station of stations" [value]="station.id">
+          {{ station.nom }} - {{ station.ville }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="carburant" class="form-label">Carburant</label>
+      <select 
+        class="form-select" 
+        id="carburant" 
+        [(ngModel)]="selectedCarburantId" 
+        name="carburant" 
+        required>
+        <option [value]="0">Sélectionner un carburant</option>
+        <option *ngFor="let carburant of carburants" [value]="carburant.id">
+          {{ carburant.nom }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="prix" class="form-label">Prix (DH)</label>
+      <input 
+        type="number" 
+        step="0.01"
+        class="form-control" 
+        id="prix" 
+        [(ngModel)]="prixValue" 
+        name="prix" 
+        required
+        min="0">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!prixForm.valid || selectedStationId === 0 || selectedCarburantId === 0">
+      Créer
+    </button>
+    <button type="button" class="btn btn-secondary ms-2" routerLink="/prix">
+      Annuler
+    </button>
+  </form>
+</div>
+

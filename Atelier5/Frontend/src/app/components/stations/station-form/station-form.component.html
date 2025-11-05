@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <div class="form-card">
+  <h2 class="mb-3">{{ isEditMode ? 'Modifier' : 'Créer' }} une Station</h2>
+  <form (ngSubmit)="onSubmit()" #stationForm="ngForm">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="nom" 
+        [(ngModel)]="station.nom" 
+        name="nom" 
+        required>
+    </div>
+    <div class="mb-3">
+      <label for="ville" class="form-label">Ville</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="ville" 
+        [(ngModel)]="station.ville" 
+        name="ville" 
+        required>
+    </div>
+    <div class="mb-3">
+      <label for="adresse" class="form-label">Adresse</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="adresse" 
+        [(ngModel)]="station.adresse" 
+        name="adresse" 
+        required>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="!stationForm.valid">
+        {{ isEditMode ? 'Modifier' : 'Créer' }}
+      </button>
+      <button type="button" class="btn btn-secondary" routerLink="/stations">Annuler</button>
+    </div>
+  </form>
+  </div>
+</div>
+

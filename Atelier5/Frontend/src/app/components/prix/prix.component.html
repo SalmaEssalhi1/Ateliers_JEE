@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <div class="page-header">
+    <h2 class="m-0">Liste des Prix <span class="badge-counter" *ngIf="prix?.length">{{ prix.length }}</span></h2>
+    <button class="btn btn-primary" routerLink="/prix/new">Ajouter un Prix</button>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Filtres</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="stationFilter" class="form-label">Station</label>
+          <select class="form-select" id="stationFilter" [(ngModel)]="selectedStationId" (change)="filterPrix()">
+            <option [value]="null">Toutes les stations</option>
+            <option *ngFor="let station of stations" [value]="station.id">{{ station.nom }}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="dateFilter" class="form-label">Date</label>
+          <input type="date" class="form-control" id="dateFilter" [(ngModel)]="selectedDate" (change)="filterPrix()">
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <button class="btn btn-secondary" (click)="selectedStationId = null; selectedDate = ''; loadPrix()">Réinitialiser</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="spinner" aria-label="loading"></div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <table class="table table-striped" *ngIf="!loading && prix.length > 0">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Station</th>
+        <th>Carburant</th>
+        <th>Prix (DH)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of prix">
+        <td>{{ p.date }}</td>
+        <td>{{ getStationName(p.station) }}</td>
+        <td>{{ getCarburantName(p.carburant) }}</td>
+        <td>{{ p.prix }}</td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="deletePrix(p)">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && prix.length === 0" class="empty">Aucun prix trouvé.</div>
+</div>

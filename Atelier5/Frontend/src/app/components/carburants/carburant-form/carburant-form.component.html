@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <div class="form-card">
+  <h2 class="mb-3">{{ isEditMode ? 'Modifier' : 'Créer' }} un Carburant</h2>
+  <form (ngSubmit)="onSubmit()" #carburantForm="ngForm">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="nom" 
+        [(ngModel)]="carburant.nom" 
+        name="nom" 
+        required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea 
+        class="form-control" 
+        id="description" 
+        [(ngModel)]="carburant.description" 
+        name="description" 
+        rows="3"
+        required></textarea>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="!carburantForm.valid">
+        {{ isEditMode ? 'Modifier' : 'Créer' }}
+      </button>
+      <button type="button" class="btn btn-secondary" routerLink="/carburants">Annuler</button>
+    </div>
+  </form>
+  </div>
+</div>
+

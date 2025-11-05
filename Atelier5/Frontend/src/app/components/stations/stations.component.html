@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <div class="page-header">
+    <h2 class="m-0">Liste des Stations <span class="badge-counter" *ngIf="stations?.length">{{ stations.length }}</span></h2>
+    <button class="btn btn-primary" routerLink="/stations/new">Ajouter une Station</button>
+  </div>
+
+  <div class="card mb-3">
+    <div class="toolbar">
+      <input class="form-control search-input" type="text" placeholder="Rechercher par nom ou ville..." [(ngModel)]="search" (ngModelChange)="applySearch()">
+      <button class="btn btn-outline-secondary" (click)="search=''; applySearch()">Réinitialiser</button>
+    </div>
+    <div *ngIf="loading" class="spinner" aria-label="loading"></div>
+    <div *ngIf="error" class="alert alert-danger mb-2">{{ error }}</div>
+    <table class="table table-striped" *ngIf="!loading && stations.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Ville</th>
+        <th>Adresse</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let station of stations">
+        <td>{{ station.id }}</td>
+        <td>{{ station.nom }}</td>
+        <td>{{ station.ville }}</td>
+        <td>{{ station.adresse }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary me-2" [routerLink]="['/stations/edit', station.id]">
+            Modifier
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="deleteStation(station.id!)">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+    <div *ngIf="!loading && stations.length === 0" class="empty">Aucune station trouvée.</div>
+  </div>
+</div>
