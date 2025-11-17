@@ -177,6 +177,35 @@ Atelier6/
 │
 ├── pom.xml                          # Configuration Maven
 └── README.md                        # Ce fichier
+
+```
+
+## Flux de Données
+
+```
+┌─────────────┐
+│   Browser   │
+└──────┬──────┘
+       │ HTTP Request
+       ▼
+┌─────────────┐
+│ Controller  │ ←─── Spring MVC
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│   Service   │ ←─── Logique métier
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│ Repository  │ ←─── Spring Data JPA
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│  Database   │ ←─── MySQL
+└─────────────┘
 ```
 
 ## ✨ Fonctionnalités
@@ -302,7 +331,33 @@ server.port=8081
 - `id` : Identifiant unique (Long, auto-généré)
 - `dateAbs` : Date de l'absence (LocalDate)
 - `motif` : Motif de l'absence (String, optionnel)
-- `etudiant` : Référence à l'étudiant (ManyToOne)
+- `etudiant` : Référence à l'étudiant (ManyToOne) 
+
+```
+┌─────────────────────┐
+│     Etudiant        │
+├─────────────────────┤
+│ - id: Long          │
+│ - nom: String       │
+│ - prenom: String    │
+│ - classe: String    │
+│ - absences: List    │
+└──────────┬──────────┘
+           │
+           │ 1
+           │
+           │ *
+           │
+┌──────────▼──────────┐
+│      Absence        │
+├─────────────────────┤
+│ - id: Long          │
+│ - dateAbs: LocalDate│
+│ - motif: String     │
+│ - etudiant: Etudiant│
+└─────────────────────┘
+```
+
 
 ## 🔐 Sécurité
 
@@ -328,18 +383,12 @@ server.port=8081
 - [ ] API REST pour intégration mobile
 - [ ] Tests unitaires et d'intégration complets
 
-## 👤 Auteur
+## 👤 Réalisé par
 
-**FSTT - Atelier 6**
-
-Projet développé dans le cadre de l'atelier 6 de la FSTT.
-
-## 📄 Licence
-
-Ce projet est un projet éducatif.
-
----
-
-**Version** : 0.0.1-SNAPSHOT  
-**Dernière mise à jour** : Novembre 2025
+**ESSALHI SALMA**  
+Filière : *Logiciels et Systèmes Intelligents*  
+Sous la supervision de **Pr. ELAACHAK LOTFI**
+**Date du rapport** : novembre 2025  
+**Version du projet** : 1.0-SNAPSHOT  
+**Statut** : Fonctionnel et déployable
 
