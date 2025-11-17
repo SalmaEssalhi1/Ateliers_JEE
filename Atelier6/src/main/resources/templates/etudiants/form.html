@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${etudiant?.id != null ? 'Modifier l' + 'étudiant' : 'Ajouter un étudiant'}">Formulaire Étudiant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header" th:classappend="${etudiant?.id != null ? 'bg-warning' : 'bg-success'}">
+                        <h3 class="mb-0 text-white">
+                            <i class="bi" th:classappend="${etudiant?.id != null ? 'bi-pencil-square' : 'bi-person-plus'}"></i>
+                            <span th:text="${etudiant?.id != null ? 'Modifier l' + 'étudiant' : 'Ajouter un étudiant'}"></span>
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/etudiants/save}" th:object="${etudiant}" method="post">
+                            <input type="hidden" th:field="*{id}"/>
+                            
+                            <div class="mb-3">
+                                <label for="nom" class="form-label">Nom <span class="text-danger">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="nom" 
+                                       th:field="*{nom}" 
+                                       required
+                                       placeholder="Entrez le nom">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="prenom" class="form-label">Prénom <span class="text-danger">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="prenom" 
+                                       th:field="*{prenom}" 
+                                       required
+                                       placeholder="Entrez le prénom">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="classe" class="form-label">Classe <span class="text-danger">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="classe" 
+                                       th:field="*{classe}" 
+                                       required
+                                       placeholder="Ex: L3 Info, M1 MIAGE, etc.">
+                            </div>
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="/etudiants" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-left"></i> Retour à la liste
+                                </a>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-check-circle"></i> 
+                                    <span th:text="${etudiant?.id != null ? 'Modifier' : 'Enregistrer'}"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
