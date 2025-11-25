@@ -1,0 +1,37 @@
+<section class="page-header">
+  <div>
+    <h1>Supprimer un employé</h1>
+    <p>Confirmez la suppression définitive depuis la base de données.</p>
+  </div>
+  <a routerLink="/employees" class="btn ghost">Annuler</a>
+</section>
+
+<div class="card">
+  <div *ngIf="isLoading" class="state">Chargement...</div>
+  <div *ngIf="errorMessage" class="state error">{{ errorMessage }}</div>
+
+  <div class="content" *ngIf="!isLoading && !errorMessage && employee">
+    <p>
+      Vous êtes sur le point de supprimer définitivement
+      <strong>{{ employee.firstName }} {{ employee.lastName }}</strong>.
+    </p>
+    <p>Cette action est irréversible. Voulez-vous continuer ?</p>
+    <dl>
+      <div>
+        <dt>Email</dt>
+        <dd>{{ employee.email }}</dd>
+      </div>
+      <div>
+        <dt>Salaire</dt>
+        <dd>{{ employee.salary | number: '1.2-2' }} MAD</dd>
+      </div>
+    </dl>
+
+    <div class="actions">
+      <button class="btn danger" (click)="confirmDelete()" [disabled]="isDeleting">
+        {{ isDeleting ? 'Suppression...' : 'Oui, supprimer' }}
+      </button>
+      <a routerLink="/employees" class="btn ghost">Non, revenir</a>
+    </div>
+  </div>
+</div>

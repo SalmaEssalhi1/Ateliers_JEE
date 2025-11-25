@@ -1,0 +1,64 @@
+version: '3.8'
+
+# Configuration pour la production
+# Utilise cette configuration pour déployer en production
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: employees-mysql-prod
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-changeme}
+      MYSQL_DATABASE: employees_db
+      MYSQL_USER: ${MYSQL_USER:-appuser}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-changeme}
+    volumes:
+      - mysql_data_prod:/var/lib/mysql
+    networks:
+      - employees-network-prod
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./Atelier7
+      dockerfile: Dockerfile
+    container_name: employees-backend-prod
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/employees_db?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER:-appuser}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD:-changeme}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+      SPRING_JPA_SHOW_SQL: "false"
+      SERVER_PORT: 8080
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - employees-network-prod
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontemploye
+      dockerfile: Dockerfile
+    container_name: employees-frontend-prod
+    depends_on:
+      - backend
+    networks:
+      - employees-network-prod
+    restart: always
+
+networks:
+  employees-network-prod:
+    driver: bridge
+
+volumes:
+  mysql_data_prod:
+    driver: local
+

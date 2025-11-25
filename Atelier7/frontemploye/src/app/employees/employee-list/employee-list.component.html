@@ -1,0 +1,47 @@
+<section class="page-header">
+  <div>
+    <h1>Employés</h1>
+    <p>Consultez, ajoutez ou modifiez les employés de l'organisation.</p>
+  </div>
+  <a routerLink="new" class="btn primary">Ajouter un employé</a>
+</section>
+
+<div class="card">
+  <div class="card-header">
+    <h2>Liste des employés</h2>
+    <button class="btn ghost" (click)="refresh()">Actualiser</button>
+  </div>
+
+  <div *ngIf="isLoading" class="state">Chargement des données...</div>
+  <div *ngIf="errorMessage" class="state error">{{ errorMessage }}</div>
+
+  <div class="table-wrapper" *ngIf="!isLoading && !errorMessage">
+    <table>
+      <thead>
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Salaire (MAD)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; trackBy: trackById">
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.salary | number: '1.2-2' }}</td>
+          <td class="actions">
+            <a [routerLink]="[employee.id]" class="link">Détails</a>
+            <a [routerLink]="[employee.id, 'edit']" class="link">Modifier</a>
+            <a [routerLink]="[employee.id, 'delete']" class="link danger">Supprimer</a>
+          </td>
+        </tr>
+        <tr *ngIf="employees.length === 0">
+          <td colspan="5" class="state">Aucun employé pour le moment.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

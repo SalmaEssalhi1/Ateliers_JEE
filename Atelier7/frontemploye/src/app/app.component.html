@@ -1,0 +1,24 @@
+<header class="app-header">
+  <div class="container">
+    <a routerLink="/employees" class="brand">Front Employé</a>
+
+    <nav>
+      <a routerLink="/employees" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">Employés</a>
+    </nav>
+
+    <div class="auth">
+      <ng-container *ngIf="(currentUser$ | async) as user; else loginLink">
+        <span>Bonjour, {{ user }}</span>
+        <button type="button" (click)="logout()">Se déconnecter</button>
+      </ng-container>
+      <ng-template #loginLink>
+        <button type="button" class="ghost" (click)="navigateToLogin()">Se connecter</button>
+      </ng-template>
+    </div>
+  </div>
+</header>
+
+<main class="app-main">
+  <router-outlet />
+</main>
+

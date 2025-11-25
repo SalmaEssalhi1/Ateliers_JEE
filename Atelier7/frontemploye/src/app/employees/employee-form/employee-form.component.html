@@ -1,0 +1,61 @@
+<section class="page-header">
+  <div>
+    <h1>{{ mode === 'create' ? 'Ajouter un employé' : 'Modifier un employé' }}</h1>
+    <p>Renseignez les informations obligatoires, puis validez le formulaire.</p>
+  </div>
+  <a routerLink="/employees" class="btn ghost">Retour à la liste</a>
+</section>
+
+<div class="card">
+  <div *ngIf="isLoading" class="state">Chargement des informations...</div>
+  <div *ngIf="!isLoading">
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <label>
+        Prénom
+        <input formControlName="firstName" type="text" />
+        <span class="error" *ngIf="form.controls.firstName.touched && form.controls.firstName.hasError('required')">
+          Le prénom est obligatoire.
+        </span>
+      </label>
+
+      <label>
+        Nom
+        <input formControlName="lastName" type="text" />
+        <span class="error" *ngIf="form.controls.lastName.touched && form.controls.lastName.hasError('required')">
+          Le nom est obligatoire.
+        </span>
+      </label>
+
+      <label>
+        Email
+        <input formControlName="email" type="email" />
+        <span class="error" *ngIf="form.controls.email.touched && form.controls.email.hasError('required')">
+          L'email est obligatoire.
+        </span>
+        <span class="error" *ngIf="form.controls.email.touched && form.controls.email.hasError('email')">
+          Format d'email invalide.
+        </span>
+      </label>
+
+      <label>
+        Salaire
+        <input formControlName="salary" type="number" step="0.01" />
+        <span class="error" *ngIf="form.controls.salary.touched && form.controls.salary.hasError('required')">
+          Le salaire est obligatoire.
+        </span>
+        <span class="error" *ngIf="form.controls.salary.touched && form.controls.salary.hasError('min')">
+          Le salaire doit être positif.
+        </span>
+      </label>
+
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <div class="actions">
+        <button type="submit" class="btn primary" [disabled]="isSaving">
+          {{ isSaving ? 'Enregistrement...' : (mode === 'create' ? 'Créer' : 'Mettre à jour') }}
+        </button>
+        <a routerLink="/employees" class="btn ghost">Annuler</a>
+      </div>
+    </form>
+  </div>
+</div>

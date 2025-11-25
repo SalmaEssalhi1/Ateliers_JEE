@@ -1,0 +1,53 @@
+version: '3.8'
+
+# Configuration pour le développement
+# Utilise cette configuration pour le développement avec hot-reload
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: employees-mysql-dev
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: employees_db
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data_dev:/var/lib/mysql
+    networks:
+      - employees-network-dev
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./Atelier7
+      dockerfile: Dockerfile.dev
+    container_name: employees-backend-dev
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/employees_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: appuser
+      SPRING_DATASOURCE_PASSWORD: apppassword
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+      SERVER_PORT: 8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./Atelier7/src:/app/src
+      - ./Atelier7/target:/app/target
+    depends_on:
+      - mysql
+    networks:
+      - employees-network-dev
+    restart: unless-stopped
+
+networks:
+  employees-network-dev:
+    driver: bridge
+
+volumes:
+  mysql_data_dev:
+    driver: local
+

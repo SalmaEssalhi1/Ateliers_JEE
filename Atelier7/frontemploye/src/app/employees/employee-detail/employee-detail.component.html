@@ -1,0 +1,36 @@
+<section class="page-header">
+  <div>
+    <h1>Détails employé</h1>
+    <p>Visualisez l'ensemble des informations concernant cet employé.</p>
+  </div>
+  <a routerLink="/employees" class="btn ghost">Retour à la liste</a>
+</section>
+
+<div class="card">
+  <div *ngIf="isLoading" class="state">Chargement...</div>
+  <div *ngIf="errorMessage" class="state error">{{ errorMessage }}</div>
+
+  <dl *ngIf="!isLoading && !errorMessage && employee">
+    <div>
+      <dt>Prénom</dt>
+      <dd>{{ employee.firstName }}</dd>
+    </div>
+    <div>
+      <dt>Nom</dt>
+      <dd>{{ employee.lastName }}</dd>
+    </div>
+    <div>
+      <dt>Email</dt>
+      <dd>{{ employee.email }}</dd>
+    </div>
+    <div>
+      <dt>Salaire</dt>
+      <dd>{{ employee.salary | number: '1.2-2' }} MAD</dd>
+    </div>
+  </dl>
+
+  <div class="actions" *ngIf="employee">
+    <a [routerLink]="['/employees', employee.id, 'edit']" class="btn primary">Modifier</a>
+    <a [routerLink]="['/employees', employee.id, 'delete']" class="btn ghost danger">Supprimer</a>
+  </div>
+</div>

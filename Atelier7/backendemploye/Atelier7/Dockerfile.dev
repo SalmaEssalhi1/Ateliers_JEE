@@ -1,0 +1,19 @@
+# Dockerfile pour le développement avec hot-reload
+FROM maven:3.9-eclipse-temurin-25
+
+WORKDIR /app
+
+# Copier les fichiers de configuration
+COPY pom.xml .
+COPY .mvn .mvn
+COPY mvnw .
+
+# Installer les dépendances
+RUN mvn dependency:go-offline -B
+
+# Exposer le port
+EXPOSE 8080
+
+# Commande pour le développement (hot-reload avec spring-boot-devtools)
+CMD ["mvn", "spring-boot:run"]
+
