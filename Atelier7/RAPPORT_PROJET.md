@@ -466,29 +466,7 @@ Les requêtes depuis Angular (port 4200) vers Spring Boot (port 8080) étaient b
 3. **Validation** : Les validations sont effectuées côté backend et frontend
 4. **Erreurs** : Gestion d'erreurs améliorée avec messages clairs
 
-### Améliorations Possibles
 
-- [x] Dockerisation de l'application ✅
-- [ ] Refresh token pour renouveler le JWT
-- [ ] Gestion des rôles (ADMIN/USER) dans le frontend
-- [ ] Pagination pour la liste des employés
-- [ ] Recherche et filtres
-- [ ] Export des données (CSV, PDF)
-- [ ] Tests unitaires et d'intégration
-- [ ] CI/CD avec GitHub Actions
-- [ ] Monitoring avec Prometheus/Grafana
-
----
-
-## 📞 Support
-
-Pour toute question ou problème :
-- Vérifier les logs du backend (console Spring Boot)
-- Vérifier la console du navigateur (F12)
-- Vérifier que MySQL est démarré
-- Vérifier que les ports 4200 et 8080 sont disponibles
-
----
 
 **Document généré le :** Novembre 2025  
 **Version :** 1.0
